@@ -158,7 +158,7 @@ This project include an example project using MercadoPagoSDKV4. `ExampleObjectiv
 
 ### 📚 Documentation & DevSite
 
-- [Advanced full documentation](./documentation/v4/)
+- [Advanced full documentation](./documentation/v4/index.html)
 - [Check out MercadoPago Developers Site](http://www.mercadopago.com.ar/developers)
 
 ## ❤️ Feedback
