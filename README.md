@@ -1,4 +1,5 @@
 ![Screenshot iOS](https://camo.githubusercontent.com/301c6c4170a0fc897702e1931199903ff59e1ca5/68747470733a2f2f692e696d6775722e636f6d2f596c7231436b362e6a7067)
+
 <p align="center">
     <a href="https://app.bitrise.io/">
       <img src="https://app.bitrise.io/app/d2d19a45654ed1d8/status.svg?token=9BWGNvo1MwPKFb2wQB2dCg">
@@ -23,6 +24,7 @@ pod 'MercadoPagoSDK'
 ```
 
 ## 🌟 Features
+
 - [x] Easy to install
 - [x] Easy to integrate
 - [x] PCI compliance
@@ -35,43 +37,53 @@ pod 'MercadoPagoSDK'
 - [x] Support to create your own custom Payment Method
 
 ## 🐒 How to use
+
 Only **3** steps needed to create a basic checkout using `MercadopagoSDK`:
 
 ### 1 - Import into project
+
 ```swift
 import MercadoPagoSDK
 ```
 
-### 2 - Set your  `PublicKey`  and  `PreferenceId` 
+### 2 - Set your `PublicKey` and `PreferenceId`
+
 ```swift
 let checkout = MercadoPagoCheckout.init(builder: MercadoPagoCheckoutBuilder.init(publicKey: "your_public_key", preferenceId: "your_checkout_preference_id"))
 ```
 
 ### 3 - Start
+
 ```swift
 checkout.start(navigationController: self.navigationController)
 ```
 
 ## 💪 One line integration
+
 ```swift
 MercadoPagoCheckout.init(builder: MercadoPagoCheckoutBuilder.init(publicKey: "your_public_key", preferenceId: "your_checkout_preference_id")).start(navigationController: self.navigationController)
 ```
 
 ## 💡Advanced integration
+
 Check our official code <a href="http://mercadopago.github.io/px-ios/v4/" target="_blank"> reference </a>, especially <a href="http://mercadopago.github.io/px-ios/v4/Classes/MercadoPagoCheckoutBuilder.html" target="_blank"> MercadoPagoCheckoutBuilder </a> object to explore all available functionalities.
 
-
 ## 🎨 UI Custom Colors
+
 ### Basic color customization
+
 You can define one color (your main color) and we will take care of the rest. Delivering the best Checkout experience based on your color.
+
 ```swift
 checkoutBuilder.setColor(checkoutColor: UIColor.purple)
 ```
 
 ### Advanced color customization
-If you need an advanced color customization, you can customize your colors through our `PXTheme` interface/protocol. Check the  <a href="http://mercadopago.github.io/px-ios/v4/Protocols/PXTheme.html" target="_blank"> `PXTheme` methods in our reference guide. </a>
+
+If you need an advanced color customization, you can customize your colors through our `PXTheme` interface/protocol. Check the <a href="http://mercadopago.github.io/px-ios/v4/Protocols/PXTheme.html" target="_blank"> `PXTheme` methods in our reference guide. </a>
 
 The following example implements the protocol `PXTheme` to customize the UI with Mercadolibre style:
+
 ```swift
 final class ExampleTheme: PXTheme {
     let primaryColor: UIColor = #colorLiteral(red: 1, green: 0.9176470588, blue: 0.4705882353, alpha: 1)
@@ -99,7 +111,9 @@ final class ExampleTheme: PXTheme {
 ```
 
 ## 🔠 Custom Fonts
+
 You can set your custom Font by `PXTheme` protocol. Implement the following 3 optional methods:
+
 ```swift
 @objc optional func fontName() -> String?
 @objc optional func lightFontName() -> String?
@@ -107,9 +121,11 @@ You can set your custom Font by `PXTheme` protocol. Implement the following 3 op
 ```
 
 ## 📈 Tracking
+
 We provide `PXTrackerListener` protocol to notify each tracking event. You can subscribe to this protocol using `PXTracker`.
 
 ### Implement PXTrackerListener protocol.
+
 ```swift
 @objc public protocol PXTrackerListener: NSObjectProtocol {
     func trackScreen(screenName: String, extraParams: [String: Any]?)
@@ -118,38 +134,47 @@ We provide `PXTrackerListener` protocol to notify each tracking event. You can s
 ```
 
 ### Set listener
+
 ```swift
 PXTracker.setListener(self)
 ```
 
 ### 📋 Supported OS & SDK Versions
-* iOS 10.0+
-* Swift 4.2
-* xCode 9.2+
-* @Objc full compatibility
+
+- iOS 10.0+
+- Swift 4.2
+- xCode 9.2+
+- @Objc full compatibility
 
 ### 🦍 Support for iOS 9?
+
 We removed iOS9 support. But you can use the following tag to get the latest version compatible with iOS9. (Under yourk risk)
-+ [v4.18.3] (https://github.com/mercadopago/px-ios/tree/4.18.3)
+
+- [v4.18.3] (https://github.com/mercadopago/px-ios/tree/4.18.3)
 
 ### 🔮 Project Example
+
 This project include an example project using MercadoPagoSDKV4. `ExampleObjectiveC & ExampleSwift`. In case you need support contact the MercadoPago Developers Site.
 
 ### 📚 Documentation & DevSite
-+ [Advanced full documentation](http://mercadopago.github.io/px-ios/v4/)
-+ [Check out MercadoPago Developers Site](http://www.mercadopago.com.ar/developers)
+
+- [Advanced full documentation](./documentation/v4/)
+- [Check out MercadoPago Developers Site](http://www.mercadopago.com.ar/developers)
 
 ## ❤️ Feedback
+
 You can join the MercadoPago Developers Community on MercadoPago Developers Site:
-+ [English](https://www.mercadopago.com.ar/developers/en/community/forum/)
-+ [Español](https://www.mercadopago.com.ar/developers/es/community/forum/)
-+ [Português](https://www.mercadopago.com.br/developers/pt/community/forum/)
+
+- [English](https://www.mercadopago.com.ar/developers/en/community/forum/)
+- [Español](https://www.mercadopago.com.ar/developers/es/community/forum/)
+- [Português](https://www.mercadopago.com.br/developers/pt/community/forum/)
 
 This is an open source project, so feel free to contribute. How?
+
 - Fork this project and propose your own fixes, suggestions and open a pull request with the changes.
 
-
 ## 👨🏻‍💻 Author
+
 Mercado Pago / Mercado Libre
 
 ## 👮🏻 License
